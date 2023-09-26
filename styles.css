@@ -1,14 +1,24 @@
+#pad {
+    display: flex;
+    justify-content: center;
+    padding: 0%;
+}
+
 #container {
     display: flex;
-    width: 54em;
-    height: 17em;
+    width: 50em;
+    height: 21em;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .grid {
-    background-color: rgb(230, 235, 240);
+    background-color: rgb(255, 255, 255);
     width: 6%;
     height: 10%;
-    border: 1px solid rgb(208, 215, 221);
+    border: 1px solid rgb(206, 210, 214);
+}
+
+.draw {
+    background-color: rgb(68, 67, 67);
 }
