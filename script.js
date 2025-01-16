@@ -42,4 +42,9 @@ color.addEventListener('change', () => {
     curColor = color.value;
 })
 
+document.getElementById('clear').addEventListener('click', ()=> {
+    const cells = document.querySelectorAll('.cell');
+    cells.forEach(cell => cell.style.backgroundColor = 'white');
+})
+
 window.addEventListener('load', createGrid);
