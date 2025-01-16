@@ -3,6 +3,10 @@ const defaultColor = 'black';
 
 let curSize = defaultSize;
 let curColor = defaultColor;
+let isDrawing = false;
+
+document.addEventListener('mousedown', () => (isDrawing = true));
+document.addEventListener('mouseup', () => (isDrawing = false));
 
 const size = document.getElementById('size');
 const color = document.getElementById('colorPicker');
@@ -15,8 +19,11 @@ function createGrid() {
         for(let j = 0; j < curSize; j++) {
             const grid = document.createElement('div');
             grid.setAttribute('class', 'cell');
-            grid.addEventListener('click', () => {
-                grid.classList.toggle('draw');
+            grid.addEventListener('mousedown', () => {
+                grid.style.backgroundColor = curColor;
+            });
+            grid.addEventListener('mousemove', () => {
+                if (isDrawing) grid.style.backgroundColor = curColor;
             });
             container.appendChild(grid);
         }
@@ -32,7 +39,7 @@ size.addEventListener('change', () => {
 })
 
 color.addEventListener('change', () => {
-    document.documentElement.style.setProperty('--curColor', color.value);
+    curColor = color.value;
 })
 
 window.addEventListener('load', createGrid);
