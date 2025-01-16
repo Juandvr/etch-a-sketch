@@ -3,10 +3,17 @@ const defaultColor = 'black';
 
 let curSize = defaultSize;
 let curColor = defaultColor;
+
 let isDrawing = false;
 
 document.addEventListener('mousedown', () => (isDrawing = true));
 document.addEventListener('mouseup', () => (isDrawing = false));
+
+let isEraser = false;
+
+document.getElementById('eraser').addEventListener('click', () => {
+    isEraser = !isEraser;
+})
 
 const size = document.getElementById('size');
 const color = document.getElementById('colorPicker');
@@ -20,10 +27,10 @@ function createGrid() {
             const grid = document.createElement('div');
             grid.setAttribute('class', 'cell');
             grid.addEventListener('mousedown', () => {
-                grid.style.backgroundColor = curColor;
+                grid.style.backgroundColor = isEraser ? 'white' : curColor;
             });
             grid.addEventListener('mousemove', () => {
-                if (isDrawing) grid.style.backgroundColor = curColor;
+                if (isDrawing) grid.style.backgroundColor = isEraser ? 'white' : curColor;
             });
             container.appendChild(grid);
         }
