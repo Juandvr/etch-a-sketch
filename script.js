@@ -11,8 +11,15 @@ document.addEventListener('mouseup', () => (isDrawing = false));
 
 let isEraser = false;
 
-document.getElementById('eraser').addEventListener('click', () => {
+let eraser = document.getElementById('eraser');
+
+eraser.addEventListener('click', () => {
     isEraser = !isEraser;
+    if (isEraser) {
+        eraser.style.backgroundColor = '#d7d6d6';
+        } else {
+            eraser.style.backgroundColor = '#eee';
+        }
 })
 
 const size = document.getElementById('size');

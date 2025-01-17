@@ -10,11 +10,11 @@
     <h1 id="title">Etch-a-Sketch</h1>
     <div id="pad">
         <div id="panel">
-            <input type="color" id="colorPicker">
-            <p>Size: </p>
-            <input type="number" id="size" min="10" max="64" value="16">
-            <button id="eraser">Eraser</button>
-            <button id="clear">Clear</button>
+            <input type="color" id="colorPicker" style="grid-row: 1 / 1; grid-column: 1 / span 2;">
+            <p style="grid-row: 2 / 2; font-size: 22px; grid-column: 1 / 1;">Size: </p>
+            <input type="number" id="size" min="10" max="64" value="16" style="grid-row: 2 / 2; grid-column: 2 / 2; margin: 5px;">
+            <button id="eraser" style="grid-row: 3 / 3; grid-column: 1 / span 2;">Eraser</button>
+            <button id="clear" style="grid-row: 4 / 4; grid-column: 1 / span 2;">Clear</button>
         </div>
         <div id="container"></div>
     </div>
